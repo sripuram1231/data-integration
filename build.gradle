@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+}
+
+group = 'Data.Integration'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+
+    // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+    implementation 'org.apache.kafka:kafka-clients:3.9.0'
+
+    // Apache Flink
+    implementation 'org.apache.flink:flink-clients:1.20.1'
+    implementation 'org.apache.flink:flink-connector-kafka:3.4.0-1.20'
+    compileOnly 'org.apache.flink:flink-streaming-java:1.20.1'
+
+    // Log4j2 dependencies
+    implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+    implementation 'org.apache.logging.log4j:log4j-slf4j2-impl:2.20.0'
+
+    // For asynchronous logging (better performance)
+    implementation 'com.lmax:disruptor:3.4.4'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:deprecation"
+}
+
+
+test {
+    useJUnitPlatform()
+}
+
