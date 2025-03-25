@@ -1,0 +1,6 @@
+2025-02-26 12:51:31.099 [main] ERROR Data.Integration.DataIntegrationApplication - This is an error message
+java.lang.Exception: Something went wrong
+	at Data.Integration.DataIntegrationApplication.main(DataIntegrationApplication.java:13) [main/:?]
+2025-02-26 12:55:18.515 [main] ERROR Data.Integration.DataIntegrationApplication - This is an error message
+java.lang.Exception: Something went wrong
+	at Data.Integration.DataIntegrationApplication.main(DataIntegrationApplication.java:13) [main/:?]

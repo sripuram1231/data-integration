@@ -1,0 +1,3 @@
+2025-03-05 14:09:43.577 [main] ERROR kafka.KafkaMessageLogger - Error consuming messages
+java.lang.NullPointerException: Cannot invoke "org.apache.kafka.clients.producer.KafkaProducer.send(org.apache.kafka.clients.producer.ProducerRecord, org.apache.kafka.clients.producer.Callback)" because "kafka.KafkaMessageLogger.producer" is null
+	at kafka.KafkaMessageLogger.main(KafkaMessageLogger.java:84) [main/:?]
